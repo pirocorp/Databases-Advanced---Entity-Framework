@@ -16,7 +16,17 @@
             var z = decimal.Parse(Console.ReadLine());
             var y = decimal.Parse(Console.ReadLine());
 
-            var box = new Box(x, y, z);
+            Box box = null;
+
+            try
+            {
+                box = new Box(x, y, z);
+            }
+            catch (ArgumentException ae)
+            {
+                Console.WriteLine(ae.Message);
+                return;
+            }
 
             Console.WriteLine($"Surface Area - {box.SurfaceArea():F2}");
             Console.WriteLine($"Lateral Surface Area - {box.LateralSurfaceArea():F2}");
