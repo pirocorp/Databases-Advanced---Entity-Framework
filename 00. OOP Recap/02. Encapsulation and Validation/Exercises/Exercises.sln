@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_ClassBox", "P01_ClassBox\P01_ClassBox.csproj", "{D39093F0-B35F-4751-97AA-F68B1AD95D84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_ShoppingSpree", "P03_ShoppingSpree\P03_ShoppingSpree.csproj", "{6A4A0EA2-4373-4141-A76C-EEEAC1B87495}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D39093F0-B35F-4751-97AA-F68B1AD95D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D39093F0-B35F-4751-97AA-F68B1AD95D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D39093F0-B35F-4751-97AA-F68B1AD95D84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A4A0EA2-4373-4141-A76C-EEEAC1B87495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A4A0EA2-4373-4141-A76C-EEEAC1B87495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A4A0EA2-4373-4141-A76C-EEEAC1B87495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A4A0EA2-4373-4141-A76C-EEEAC1B87495}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
