@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01. Define a class Person", "P01. Define a class Person\P01. Define a class Person.csproj", "{FAA92B83-369C-47E5-8AB2-0DCA48E83700}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAA92B83-369C-47E5-8AB2-0DCA48E83700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAA92B83-369C-47E5-8AB2-0DCA48E83700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAA92B83-369C-47E5-8AB2-0DCA48E83700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAA92B83-369C-47E5-8AB2-0DCA48E83700}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7534F4D-8663-46A3-A5BC-7224EF16DB91}
+	EndGlobalSection
+EndGlobal
