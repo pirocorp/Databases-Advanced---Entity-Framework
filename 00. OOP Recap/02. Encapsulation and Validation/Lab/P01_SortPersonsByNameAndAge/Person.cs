@@ -1,31 +1,77 @@
 ﻿namespace P01_SortPersonsByNameAndAge
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     public class Person
     {
-        private readonly string firstName;
-        private readonly string lastName;
-        private readonly int age;
+        private string firstName;
+        private string lastName;
+        private int age;
         private decimal salary;
 
         public Person(string firstName, string lastName, int age, decimal salary)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.age = age;
-            this.salary = salary;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Age = age;
+            this.Salary = salary;
         }
         
-        public string FirstName => this.firstName;
+        public string FirstName 
+        {
+            get => this.firstName;
+            private set
+            {
+                if (value.Length < 3)
+                {
+                    throw new ArgumentException($"First name cannot be less than 3 symbols");
+                }
 
-        public string LastName => this.lastName;
+                this.firstName = value;
+            }
+        }
 
-        public int Age => this.age;
+        public string LastName 
+        {
+            get => this.lastName;
+            set
+            {
+                if (value.Length < 3)
+                {
+                    throw new ArgumentException($"Last name cannot be less than 3 symbols");
+                }
 
-        public decimal Salary => this.salary;
+                this.lastName = value;
+            }
+        }
+
+        public int Age 
+        {
+            get => this.age;
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException($"Age cannot be zero or negative integer");
+                }
+
+                this.age = value;
+            }
+        }
+
+        public decimal Salary 
+        {
+            get => this.salary;
+            set
+            {
+                if (value < 460)
+                {
+                    throw new ArgumentException($"Salary cannot be less than 460 leva");
+                }
+
+                this.salary = value;
+            }
+        }
 
         public void IncreaseSalary(decimal percent)
         {
