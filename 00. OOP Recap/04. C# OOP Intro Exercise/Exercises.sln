@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02_DateModifier", "P02_Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_RawData", "P03_RawData\P03_RawData.csproj", "{D14FFB39-1DFA-4059-AF6D-12EB54BC8555}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_AnimalFarm", "P04_AnimalFarm\P04_AnimalFarm.csproj", "{F11D8BFD-2282-48DC-8E88-879417FFF0A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D14FFB39-1DFA-4059-AF6D-12EB54BC8555}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D14FFB39-1DFA-4059-AF6D-12EB54BC8555}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D14FFB39-1DFA-4059-AF6D-12EB54BC8555}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F11D8BFD-2282-48DC-8E88-879417FFF0A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F11D8BFD-2282-48DC-8E88-879417FFF0A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F11D8BFD-2282-48DC-8E88-879417FFF0A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F11D8BFD-2282-48DC-8E88-879417FFF0A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
