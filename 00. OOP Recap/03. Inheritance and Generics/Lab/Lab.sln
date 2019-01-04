@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_SingleInheritance", "P01_SingleInheritance\P01_SingleInheritance.csproj", "{1774C15B-1180-4BD2-860F-AC716C44C0B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_RandomList", "P04_RandomList\P04_RandomList.csproj", "{24F4B744-9216-47C8-8449-94CBD441AD14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1774C15B-1180-4BD2-860F-AC716C44C0B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1774C15B-1180-4BD2-860F-AC716C44C0B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1774C15B-1180-4BD2-860F-AC716C44C0B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24F4B744-9216-47C8-8449-94CBD441AD14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F4B744-9216-47C8-8449-94CBD441AD14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F4B744-9216-47C8-8449-94CBD441AD14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F4B744-9216-47C8-8449-94CBD441AD14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
