@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_OldestFamilyMember", "P01_OldestFamilyMember\P01_OldestFamilyMember.csproj", "{3FAC1AC5-397C-4EDB-8BBE-9B240662E305}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_OldestFamilyMember", "P01_OldestFamilyMember\P01_OldestFamilyMember.csproj", "{3FAC1AC5-397C-4EDB-8BBE-9B240662E305}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02_DateModifier", "P02_DateModifier\P02_DateModifier.csproj", "{7A92C8AC-ACFA-42B4-8983-9EB1D73476B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02_DateModifier", "P02_DateModifier\P02_DateModifier.csproj", "{7A92C8AC-ACFA-42B4-8983-9EB1D73476B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_RawData", "P03_RawData\P03_RawData.csproj", "{D14FFB39-1DFA-4059-AF6D-12EB54BC8555}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03_RawData", "P03_RawData\P03_RawData.csproj", "{D14FFB39-1DFA-4059-AF6D-12EB54BC8555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_AnimalFarm", "P04_AnimalFarm\P04_AnimalFarm.csproj", "{F11D8BFD-2282-48DC-8E88-879417FFF0A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04_AnimalFarm", "P04_AnimalFarm\P04_AnimalFarm.csproj", "{F11D8BFD-2282-48DC-8E88-879417FFF0A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05_FootballTeamGenerator", "P05_FootballTeamGenerator\P05_FootballTeamGenerator.csproj", "{0B5C7F7A-C583-4765-958E-59ECEF6CBE02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F11D8BFD-2282-48DC-8E88-879417FFF0A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F11D8BFD-2282-48DC-8E88-879417FFF0A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F11D8BFD-2282-48DC-8E88-879417FFF0A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B5C7F7A-C583-4765-958E-59ECEF6CBE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B5C7F7A-C583-4765-958E-59ECEF6CBE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B5C7F7A-C583-4765-958E-59ECEF6CBE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B5C7F7A-C583-4765-958E-59ECEF6CBE02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
