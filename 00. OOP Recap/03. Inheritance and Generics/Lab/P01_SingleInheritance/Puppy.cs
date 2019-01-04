@@ -1,8 +1,6 @@
 ﻿namespace P01_SingleInheritance
 {
     using System;
-    using System.Collections.Generic;
-    using System.Text;
 
     public class Puppy : Dog
     {

@@ -4,11 +4,13 @@
     {
         public static void Main()
         {
-            var puppy = new Puppy();
+            var dog = new Dog();
+            dog.Eat();
+            dog.Bark();
 
-            puppy.Eat();
-            puppy.Bark();
-            puppy.Weep();
+            var cat = new Cat();
+            cat.Eat();
+            cat.Meow();
         }
     }
 }
