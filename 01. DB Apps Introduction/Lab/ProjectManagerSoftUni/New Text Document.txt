@@ -1,0 +1,11 @@
+ProjectManager for SoftUni Database
+
+Features:
+1. List all projects
+2. View Details for specific project
+3. Search for project by name
+4. Assign and release employee
+5. Create new project
+6. Edit existing project details
++ Pagination
++ Search by employee
