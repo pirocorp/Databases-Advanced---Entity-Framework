@@ -5,21 +5,21 @@ VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_InitialSetup", "P01_InitialSetup\P01_InitialSetup.csproj", "{9BBF9CE2-D269-4093-9964-4A0F502E1A8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P02_VillainNames", "P02_VillainNames\P02_VillainNames.csproj", "{14F55A5F-4F35-478B-901D-E3E3A51548A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P02_VillainNames", "P02_VillainNames\P02_VillainNames.csproj", "{14F55A5F-4F35-478B-901D-E3E3A51548A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P03_MinionNames", "P03_MinionNames\P03_MinionNames.csproj", "{1649569E-9DBB-44A4-8ED4-1916FAD1DEE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03_MinionNames", "P03_MinionNames\P03_MinionNames.csproj", "{1649569E-9DBB-44A4-8ED4-1916FAD1DEE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P04_AddMinion", "P04_AddMinion\P04_AddMinion.csproj", "{A4F50FB4-C463-40E7-98D3-DFBDB9C5230E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04_AddMinion", "P04_AddMinion\P04_AddMinion.csproj", "{A4F50FB4-C463-40E7-98D3-DFBDB9C5230E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05_ChangeTownNamesCasing", "P05_ChangeTownNamesCasing\P05_ChangeTownNamesCasing.csproj", "{A525E719-B7BE-4DAB-AE13-54B1F18DB667}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P05_ChangeTownNamesCasing", "P05_ChangeTownNamesCasing\P05_ChangeTownNamesCasing.csproj", "{A525E719-B7BE-4DAB-AE13-54B1F18DB667}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06_RemoveVillain", "P06_RemoveVillain\P06_RemoveVillain.csproj", "{C0A952D6-C800-41D3-B89D-67FD61B1E730}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P06_RemoveVillain", "P06_RemoveVillain\P06_RemoveVillain.csproj", "{C0A952D6-C800-41D3-B89D-67FD61B1E730}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P07_PrintAllMinionNames", "P07_PrintAllMinionNames\P07_PrintAllMinionNames.csproj", "{59175C7E-1932-4F15-AED1-80BE565F3FC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P07_PrintAllMinionNames", "P07_PrintAllMinionNames\P07_PrintAllMinionNames.csproj", "{59175C7E-1932-4F15-AED1-80BE565F3FC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P08_IncreaseMinionAge", "P08_IncreaseMinionAge\P08_IncreaseMinionAge.csproj", "{7FC80C39-8E32-4928-B140-4B862C354A8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P08_IncreaseMinionAge", "P08_IncreaseMinionAge\P08_IncreaseMinionAge.csproj", "{7FC80C39-8E32-4928-B140-4B862C354A8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P09_IncreaseAgeStoredProcedure", "P09_IncreaseAgeStoredProcedure\P09_IncreaseAgeStoredProcedure.csproj", "{4CAD85E1-FF04-4990-9AC6-D3F767F76843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P09_IncreaseAgeStoredProcedure", "P09_IncreaseAgeStoredProcedure\P09_IncreaseAgeStoredProcedure.csproj", "{4CAD85E1-FF04-4990-9AC6-D3F767F76843}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
