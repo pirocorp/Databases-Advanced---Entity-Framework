@@ -29,12 +29,13 @@
 
                     AddMinionToDatabase(minionName, minionAge, townId, dbCon, transaction);
                     var minionId = GetMinionId(minionName, dbCon, transaction);
-                    InsertMinionToMaster(minionId, villainId, dbCon, transaction);
-                    Console.WriteLine($"Successfully added {minionName} to be minion of {villainName}.");
+                    var result = InsertMinionToMaster(minionId, villainId, dbCon, transaction);
+                    transaction.Commit();
+                    Console.WriteLine($"{result} added {minionName} to be minion of {villainName}.");
                 }
-                catch (SqlException se)
+                catch (Exception e)
                 {
-                    Console.WriteLine(se.Message);
+                    Console.WriteLine(e.Message);
 
                     try
                     {
@@ -49,14 +50,28 @@
             }
         }
 
-        private static void InsertMinionToMaster(int minionId, int villainId, SqlConnection dbCon, SqlTransaction transaction)
+        private static string InsertMinionToMaster(int minionId, int villainId, SqlConnection dbCon, SqlTransaction transaction)
         {
+            var minionToMasterCount = "SELECT COUNT(*) FROM MinionsVillains WHERE MinionId = @minionId AND VillainId = @villainId;";
+            using (var minionToMasterCountCommand = new SqlCommand(minionToMasterCount, dbCon, transaction))
+            {
+                minionToMasterCountCommand.Parameters.AddWithValue("@minionId", minionId);
+                minionToMasterCountCommand.Parameters.AddWithValue("@villainId", villainId);
+                var count = int.Parse(minionToMasterCountCommand.ExecuteScalar().ToString());
+
+                if (count > 0)
+                {
+                    return "Already";
+                }
+            }
+
             var insertMinion = "INSERT INTO MinionsVillains VALUES (@minionId, @villainId)";
             using (var insertMinionCommand = new SqlCommand(insertMinion, dbCon, transaction))
             {
                 insertMinionCommand.Parameters.AddWithValue("@minionId", minionId);
                 insertMinionCommand.Parameters.AddWithValue("@villainId", villainId);
                 insertMinionCommand.ExecuteNonQuery();
+                return "Successfully";
             }
         }
 
