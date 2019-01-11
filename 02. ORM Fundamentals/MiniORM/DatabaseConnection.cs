@@ -21,7 +21,17 @@
 			this.connection = new SqlConnection(connectionString);
 		}
 
-		private SqlCommand CreateCommand(string queryText, params SqlParameter[] parameters)
+	    public void Open() => this.connection.Open();
+
+	    public void Close() => this.connection.Close();
+
+	    public SqlTransaction StartTransaction()
+	    {
+	        this.transaction = this.connection.BeginTransaction();
+	        return this.transaction;
+	    }
+
+        private SqlCommand CreateCommand(string queryText, params SqlParameter[] parameters)
 		{
 			var command = new SqlCommand(queryText, this.connection, this.transaction);
 
@@ -43,7 +53,29 @@
 			}
 		}
 
-		public IEnumerable<string> FetchColumnNames(string tableName)
+	    public IEnumerable<T> ExecuteQuery<T>(string queryText)
+	    {
+	        var rows = new List<T>();
+
+	        using (var query = CreateCommand(queryText))
+	        {
+	            using (var reader = query.ExecuteReader())
+	            {
+	                while (reader.Read())
+	                {
+                        var columnValues = new object[reader.FieldCount];
+                        reader.GetValues(columnValues);
+
+                        var obj = reader.GetFieldValue<T>(0);
+	                    rows.Add(obj);
+	                }
+	            }
+	        }
+
+	        return rows;
+	    }
+
+        public IEnumerable<string> FetchColumnNames(string tableName)
 		{
 			var rows = new List<string>();
 
@@ -58,28 +90,6 @@
 						var column = reader.GetString(0);
 
 						rows.Add(column);
-					}
-				}
-			}
-
-			return rows;
-		}
-
-		public IEnumerable<T> ExecuteQuery<T>(string queryText)
-		{
-			var rows = new List<T>();
-
-			using (var query = CreateCommand(queryText))
-			{
-				using (var reader = query.ExecuteReader())
-				{
-					while (reader.Read())
-					{
-						var columnValues = new object[reader.FieldCount];
-						reader.GetValues(columnValues);
-
-						var obj = reader.GetFieldValue<T>(0);
-						rows.Add(obj);
 					}
 				}
 			}
@@ -252,18 +262,8 @@
 
 			return identityColumns;
 		}
-
-		public SqlTransaction StartTransaction()
-		{
-			this.transaction = this.connection.BeginTransaction();
-			return this.transaction;
-		}
-
-		public void Open() => this.connection.Open();
-
-		public void Close() => this.connection.Close();
-
-		private static string EscapeColumn(string c)
+        
+        private static string EscapeColumn(string c)
 		{
 			var escapedColumn = $"[{c}]";
 			return escapedColumn;
