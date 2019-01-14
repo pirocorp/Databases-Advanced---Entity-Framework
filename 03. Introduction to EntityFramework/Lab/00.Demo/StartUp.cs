@@ -29,6 +29,16 @@
 
                 //Projection(context);
 
+                //var employees = context.Employees
+                //    .Where(e => e.Salary > 50000);
+
+                //Console.WriteLine(employees.ToSql());
+                //Console.WriteLine();
+
+                //foreach (var employee in employees.ToList())
+                //{
+                //    Console.WriteLine($"{employee.FirstName} {employee.LastName} {employee.JobTitle}");
+                //}
             }
         }
 
@@ -53,6 +63,16 @@
                 .ThenInclude(a => a.Employees)
                 .OrderByDescending(t => t.Addresses.Count)
                 .ToList();
+
+            var sql = context
+                .Towns
+                .Include(t => t.Addresses)
+                .ThenInclude(a => a.Employees)
+                .OrderByDescending(t => t.Addresses.Count)
+                .ToSql();
+
+            Console.WriteLine(sql);
+            Console.WriteLine();
 
             foreach (var town in towns)
             {
@@ -107,6 +127,23 @@
                 .GroupBy(e => e.JobTitle)
                 .OrderByDescending(x => x.Count())
                 .ToList();
+
+            var sql = context.Employees
+                .Select(e => new
+                {
+                    e.FirstName,
+                    e.LastName,
+                    e.JobTitle,
+                    e.EmployeesProjects.Count
+                })
+                .OrderBy(e => e.FirstName)
+                .ThenBy(e => e.LastName)
+                .GroupBy(e => e.JobTitle)
+                .OrderByDescending(x => x.Count())
+                .ToSql();
+
+            Console.WriteLine(sql);
+            Console.WriteLine();
 
             foreach (var group in employees)
             {
