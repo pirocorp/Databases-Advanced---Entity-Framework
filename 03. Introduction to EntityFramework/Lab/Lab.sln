@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "00.Demo", "00.Demo\00.Demo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.SoftUniADO", "01.SoftUniADO\01.SoftUniADO.csproj", "{8E33D4EA-0514-4A34-B238-53F5C955AB2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF_Kenov", "EF_Kenov\EF_Kenov.csproj", "{5362FBB4-B59E-4DAA-9DC9-231609888C10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8E33D4EA-0514-4A34-B238-53F5C955AB2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E33D4EA-0514-4A34-B238-53F5C955AB2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E33D4EA-0514-4A34-B238-53F5C955AB2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5362FBB4-B59E-4DAA-9DC9-231609888C10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5362FBB4-B59E-4DAA-9DC9-231609888C10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5362FBB4-B59E-4DAA-9DC9-231609888C10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5362FBB4-B59E-4DAA-9DC9-231609888C10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
