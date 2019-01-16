@@ -36,10 +36,7 @@
         {
             var employees = context.Employees
                 .Select(e => new
-                {
-                    Name = e.FirstName + " " + e.LastName,
-                    Department = e.Department.Name
-                })
+                {Name = e.FirstName + " " + e.LastName, Department = e.Department.Name})
                 .ToList();
 
             Console.WriteLine(string.Join(Environment.NewLine, employees));
