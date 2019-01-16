@@ -14,14 +14,9 @@
             {
                 //SelectionDemo(context);
 
-                //var employeeToFIre = context.Employees.Find(1);
+                //SelectExample(context);
 
-                //var employee = context.Employees.FirstOrDefault(e => e.FirstName == "Guy" && e.LastName == "Gilbert");
-
-                //var employee = context
-                //    .Employees
-                //    .Include(e => e.Department)
-                //    .FirstOrDefault(e => e.FirstName == "Guy" && e.LastName == "Gilbert");
+                //IncludeNavigationProperties(context);
 
                 //AddRemove(context);
 
@@ -29,17 +24,70 @@
 
                 //Projection(context);
 
-                //var employees = context.Employees
-                //    .Where(e => e.Salary > 50000);
+                //FilterExample(context);
 
-                //Console.WriteLine(employees.ToSql());
-                //Console.WriteLine();
+                //JoinExample(context);
 
-                //foreach (var employee in employees.ToList())
-                //{
-                //    Console.WriteLine($"{employee.FirstName} {employee.LastName} {employee.JobTitle}");
-                //}
+                //SelectJoin(context);
             }
+        }
+
+        private static void SelectJoin(SoftUniDbContext context)
+        {
+            var employees = context.Employees
+                .Select(e => new
+                {
+                    Name = e.FirstName + " " + e.LastName,
+                    Department = e.Department.Name
+                })
+                .ToList();
+
+            Console.WriteLine(string.Join(Environment.NewLine, employees));
+        }
+
+        private static void SelectExample(SoftUniDbContext context)
+        {
+            var employeeToFIre = context.Employees.Find(1);
+
+            var employee1 = context.Employees.FirstOrDefault(e => e.FirstName == "Guy" && e.LastName == "Gilbert");
+        }
+
+        private static void IncludeNavigationProperties(SoftUniDbContext context)
+        {
+            var employee2 = context
+                .Employees
+                .Include(e => e.Department)
+                .FirstOrDefault(e => e.FirstName == "Guy" && e.LastName == "Gilbert");
+        }
+
+        private static void FilterExample(SoftUniDbContext context)
+        {
+            var employees = context.Employees
+                .Where(e => e.Salary > 50000);
+
+            Console.WriteLine(employees.ToSql());
+            Console.WriteLine();
+
+            foreach (var employee in employees.ToList())
+            {
+                Console.WriteLine($"{employee.FirstName} {employee.LastName} {employee.JobTitle}");
+            }
+        }
+
+        private static void JoinExample(SoftUniDbContext context)
+        {
+            var result = context.Employees
+                .Join(context.Departments, e => e.DepartmentId, d => d.DepartmentId,
+                    (e, d) => new
+                    {
+                        Id = e.EmployeeId,
+                        Name = e.FirstName + " " + e.LastName,
+                        e.JobTitle,
+                        e.Salary,
+                        Department = d.Name
+                    })
+                .ToList();
+            Console.WriteLine(string.Join(Environment.NewLine, result));
         }
 
         private static void Projection(SoftUniDbContext context)
