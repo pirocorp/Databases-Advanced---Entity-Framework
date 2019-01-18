@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirst", "CodeFirst\CodeFirst.csproj", "{BF7F56EE-8837-4C9B-9D48-9D33A2AAD39D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftUniCodeFirstEF6", "SoftUniCodeFirstEF6\SoftUniCodeFirstEF6.csproj", "{84517DB0-9B07-4E5E-A474-ADF0A5ED4E23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BF7F56EE-8837-4C9B-9D48-9D33A2AAD39D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF7F56EE-8837-4C9B-9D48-9D33A2AAD39D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF7F56EE-8837-4C9B-9D48-9D33A2AAD39D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84517DB0-9B07-4E5E-A474-ADF0A5ED4E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84517DB0-9B07-4E5E-A474-ADF0A5ED4E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84517DB0-9B07-4E5E-A474-ADF0A5ED4E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84517DB0-9B07-4E5E-A474-ADF0A5ED4E23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

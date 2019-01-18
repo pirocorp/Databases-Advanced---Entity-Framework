@@ -1,9 +1,5 @@
 ﻿namespace CodeFirst.Data.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     public class PostTag
     {
         public int PostId { get; set; }
