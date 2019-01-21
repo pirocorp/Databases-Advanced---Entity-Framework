@@ -2,7 +2,7 @@
 //On one end Describing Many to One relation -- In Parent Table Location
 //Many to One relation with Fluent API is described as
 //builder.HasMany(x => x.ICollection) -- Describe many end as navigation property
-//	  .WithOne(x => x.Class) -- Describe one end as navigation property
+//	  .WithOne(x => x.Entity) -- Describe one end as navigation property
 //	  .HasForeignKey(x => x.SomeId) -- Describe which property is Foreign Key
 
 namespace P01_HospitalDatabase.Data.EntityConfiguration
