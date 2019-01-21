@@ -76,7 +76,9 @@ namespace P03_SalesDatabase.Data.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnName("CustomerID");
 
-                    b.Property<DateTime>("Date");
+                    b.Property<DateTime>("Date")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int>("ProductId")
                         .HasColumnName("ProductID");

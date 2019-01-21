@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace P03_SalesDatabase.Data.Migrations
+﻿namespace P03_SalesDatabase.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class ProductsAddColumnDescription : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

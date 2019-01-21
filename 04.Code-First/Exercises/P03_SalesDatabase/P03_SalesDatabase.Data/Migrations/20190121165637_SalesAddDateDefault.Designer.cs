@@ -9,8 +9,8 @@ namespace P03_SalesDatabase.Data.Migrations
     using P03_SalesDatabase.Data;
 
     [DbContext(typeof(SalesContext))]
-    [Migration("20190121162740_Initial")]
-    partial class Initial
+    [Migration("20190121165637_SalesAddDateDefault")]
+    partial class SalesAddDateDefault
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,6 +49,11 @@ namespace P03_SalesDatabase.Data.Migrations
                         .HasColumnName("ProductID")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Description")
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(250)
+                        .HasDefaultValue("No description");
+
                     b.Property<string>("Name")
                         .HasMaxLength(50)
                         .IsUnicode(true);
@@ -72,7 +77,9 @@ namespace P03_SalesDatabase.Data.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnName("CustomerID");
 
-                    b.Property<DateTime>("Date");
+                    b.Property<DateTime>("Date")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int>("ProductId")
                         .HasColumnName("ProductID");

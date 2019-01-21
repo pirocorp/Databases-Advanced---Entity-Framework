@@ -10,6 +10,9 @@
         {
             builder.HasKey(s => s.SaleId);
 
+            builder.Property(s => s.Date)
+                .HasDefaultValueSql("GETDATE()");
+
             builder.Property(s => s.SaleId)
                 .HasColumnName("SaleID");
 
