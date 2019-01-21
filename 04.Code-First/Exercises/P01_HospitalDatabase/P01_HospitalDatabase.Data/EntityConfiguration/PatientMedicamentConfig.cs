@@ -17,6 +17,12 @@ namespace P01_HospitalDatabase.Data.EntityConfiguration
         {
             builder.HasKey(pm => new { pm.MedicamentId, pm.PatientId });
 
+            builder.Property(pm => pm.PatientId)
+                .HasColumnName("PatientID");
+
+            builder.Property(pm => pm.MedicamentId)
+                .HasColumnName("MedicamentID");
+
             //Example
             //builder.HasOne(x => x.Patient)
             //    .WithMany(x => x.Prescriptions)

@@ -11,6 +11,15 @@
         {
             builder.HasKey(v => v.VisitationId);
 
+            builder.Property(v => v.VisitationId)
+                .HasColumnName("VisitationID");
+
+            builder.Property(v => v.PatientId)
+                .HasColumnName("PatientID");
+
+            builder.Property(v => v.DoctorId)
+                .HasColumnName("DoctorID");
+
             builder.Property(x => x.Comments)
                 .HasMaxLength(250)
                 .IsUnicode();

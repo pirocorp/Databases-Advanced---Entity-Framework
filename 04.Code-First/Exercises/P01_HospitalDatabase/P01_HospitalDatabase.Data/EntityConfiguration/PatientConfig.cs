@@ -18,6 +18,9 @@ namespace P01_HospitalDatabase.Data.EntityConfiguration
         {
             builder.HasKey(k => k.PatientId);
 
+            builder.Property(k => k.PatientId)
+                .HasColumnName("PatientID");
+
             builder.Property(p => p.FirstName)
                 .HasMaxLength(50)
                 .IsUnicode();

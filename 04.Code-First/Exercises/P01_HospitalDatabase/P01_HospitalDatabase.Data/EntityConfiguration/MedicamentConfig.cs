@@ -11,6 +11,9 @@
         {
             builder.HasKey(m => m.MedicamentId);
 
+            builder.Property(m => m.MedicamentId)
+                .HasColumnName("MedicamentID");
+
             builder.Property(x => x.Name)
                 .HasMaxLength(50)
                 .IsUnicode();
