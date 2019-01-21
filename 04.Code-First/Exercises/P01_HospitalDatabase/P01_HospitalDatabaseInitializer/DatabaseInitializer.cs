@@ -1,17 +1,12 @@
-﻿namespace P01_HospitalDatabase.Initializer
+﻿namespace HospitalDatabaseInitializer
 {
-    using System;
-    //using System.IO;
-
-    using Microsoft.EntityFrameworkCore;
-
-    using Data;
     using Generators;
+    using P01_HospitalDatabase.Data;
+
+    //using System.IO;
 
     public class DatabaseInitializer
     {
-        private static Random rnd = new Random();
-
         public static void ResetDatabase()
         {
             using (var context = new HospitalContext())

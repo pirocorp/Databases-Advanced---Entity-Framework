@@ -1,4 +1,4 @@
-﻿namespace P01_HospitalDatabase.Generators
+﻿namespace HospitalDatabaseInitializer.Generators
 {
     using System;
 

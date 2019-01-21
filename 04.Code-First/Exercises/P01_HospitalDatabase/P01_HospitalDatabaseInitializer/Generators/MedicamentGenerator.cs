@@ -1,11 +1,10 @@
-﻿namespace P01_HospitalDatabase.Generators
+﻿namespace HospitalDatabaseInitializer.Generators
 {
     //using System.IO;
+    using P01_HospitalDatabase.Data;
+    using P01_HospitalDatabase.Data.Models;
 
-    using Data;
-    using Data.Models;
-
-    class MedicamentGenerator
+    public class MedicamentGenerator
     {
         internal static void InitialMedicamentSeed(HospitalContext context)
         {

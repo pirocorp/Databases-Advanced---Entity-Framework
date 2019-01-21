@@ -1,11 +1,10 @@
-﻿namespace P01_HospitalDatabase.Generators
+﻿namespace HospitalDatabaseInitializer.Generators
 {
     using System;
-    using System.Linq;
-
-    using Data;
-    using Data.Models;
     using System.Collections.Generic;
+    using System.Linq;
+    using P01_HospitalDatabase.Data;
+    using P01_HospitalDatabase.Data.Models;
 
     public class PrescriptionGenerator
     {

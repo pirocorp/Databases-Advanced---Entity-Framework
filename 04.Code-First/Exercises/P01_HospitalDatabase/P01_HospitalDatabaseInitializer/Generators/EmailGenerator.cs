@@ -1,8 +1,8 @@
-﻿namespace P01_HospitalDatabase.Generators
+﻿namespace HospitalDatabaseInitializer.Generators
 {
-	using System;
-	
-    class EmailGenerator
+    using System;
+
+    public class EmailGenerator
     {
         private static Random rnd = new Random();
 

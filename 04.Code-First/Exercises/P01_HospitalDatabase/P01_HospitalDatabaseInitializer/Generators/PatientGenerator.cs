@@ -1,10 +1,10 @@
-﻿namespace P01_HospitalDatabase.Generators
+﻿namespace HospitalDatabaseInitializer.Generators
 {
     using System;
-    //using System.IO;
+    using P01_HospitalDatabase.Data;
+    using P01_HospitalDatabase.Data.Models;
 
-    using Data;
-    using Data.Models;
+//using System.IO;
 
     public class PatientGenerator
     {

@@ -1,6 +1,7 @@
-﻿namespace P01_HospitalDatabase.Generators
+﻿namespace HospitalDatabaseInitializer.Generators
 {
     using System;
+
     //using System.IO;
 
     public class NameGenerator

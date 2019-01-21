@@ -24,6 +24,8 @@
 
         public DbSet<PatientMedicament> PatientsMedicaments { get; set; }
 
+        public DbSet<Doctor> Doctors { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -39,6 +41,7 @@
             modelBuilder.ApplyConfiguration(new DiagnoseConfig());
             modelBuilder.ApplyConfiguration(new MedicamentConfig());
             modelBuilder.ApplyConfiguration(new PatientMedicamentConfig());
+            modelBuilder.ApplyConfiguration(new DoctorConfig());
         }
     }
 }
