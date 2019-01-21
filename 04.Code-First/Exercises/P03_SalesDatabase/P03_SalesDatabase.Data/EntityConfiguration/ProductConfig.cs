@@ -18,6 +18,10 @@
                 .HasMaxLength(50)
                 .IsUnicode();
 
+            builder.Property(p => p.Description)
+                .HasMaxLength(250)
+                .HasDefaultValue("No description");
+
             builder.HasMany(p => p.Sales)
                 .WithOne(s => s.Product)
                 .HasForeignKey(s => s.ProductId);
