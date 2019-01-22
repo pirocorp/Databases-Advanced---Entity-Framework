@@ -1,4 +1,11 @@
-﻿//One to Many relation in EF Code first Models is described as
+﻿//Data Annotations is a simple attribute based configuration method where different.NET attributes
+//can be applied to domain classes and properties to configure the model.
+
+//Data annotation attributes are not dedicated to Entity Framework, as they are also used in
+//ASP.NET MVC. This is why these attributes are included in separate namespace
+//System.ComponentModel.DataAnnotations.
+
+//One to Many relation in EF Code first Models is described as
 //In model of one end of relation we have navigation property (ICollection) to many end
 //In model of many end of relation we have navigation property (Class) to one end
 

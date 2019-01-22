@@ -1,14 +1,15 @@
 ﻿namespace P01_HospitalDatabase
 {
+    using System.Linq;
     using Data;
+    using Microsoft.EntityFrameworkCore;
 
     public class Startup
     {
         public static void Main()
         {
-            using (var context = new HospitalContext())
-            {
-            }
+            var demo = new Demo();
+            demo.Run();
         }
     }
 }
