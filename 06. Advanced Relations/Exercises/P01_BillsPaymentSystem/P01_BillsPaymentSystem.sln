@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_BillsPaymentSystem", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_BillsPaymentSystem.Data", "P01_BillsPaymentSystem.Data\P01_BillsPaymentSystem.Data.csproj", "{B5847C6A-9D24-45EE-AB11-66B2016DC697}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_BillsPaymentSystem.Data.Models", "P01_BillsPaymentSystem.Data.Models\P01_BillsPaymentSystem.Data.Models.csproj", "{1F57CCB7-E324-426E-8DDB-3EABDDC295FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P01_BillsPaymentSystem.Data.Models", "P01_BillsPaymentSystem.Data.Models\P01_BillsPaymentSystem.Data.Models.csproj", "{1F57CCB7-E324-426E-8DDB-3EABDDC295FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P01_BillsPaymentSystem.Initialize", "P01_BillsPaymentSystem.Initializer\P01_BillsPaymentSystem.Initializer.csproj", "{03597507-A3BB-4E75-8239-4A7B835438B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{1F57CCB7-E324-426E-8DDB-3EABDDC295FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F57CCB7-E324-426E-8DDB-3EABDDC295FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F57CCB7-E324-426E-8DDB-3EABDDC295FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03597507-A3BB-4E75-8239-4A7B835438B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03597507-A3BB-4E75-8239-4A7B835438B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03597507-A3BB-4E75-8239-4A7B835438B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03597507-A3BB-4E75-8239-4A7B835438B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
