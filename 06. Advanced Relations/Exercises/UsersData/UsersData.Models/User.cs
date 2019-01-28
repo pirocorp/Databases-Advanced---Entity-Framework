@@ -18,6 +18,6 @@
 
         public ICollection<UserFriend> Friends { get; set; }
 
-        public ICollection<Album> Albums { get; set; }
+        public ICollection<AlbumUser> Albums { get; set; }
     }
 }

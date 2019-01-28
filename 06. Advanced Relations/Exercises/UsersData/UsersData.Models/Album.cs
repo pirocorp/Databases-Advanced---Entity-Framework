@@ -13,8 +13,7 @@
 
         public AccessModificator Access { get; set; }
 
-        public int UserId { get; set; }
-        public User User { get; set; }
+        public ICollection<AlbumUser> Users { get; set; }
 
         public ICollection<AlbumPicture> Pictures { get; set; }
 
