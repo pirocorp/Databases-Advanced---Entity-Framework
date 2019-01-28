@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using Enums;
 
     public class AlbumUser
     {
@@ -11,5 +12,7 @@
 
         public int UserId { get; set; }
         public User User { get; set; }
+
+        public UserRole Role { get; set; }
     }
 }
