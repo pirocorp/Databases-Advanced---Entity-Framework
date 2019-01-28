@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UsersData.Data;
 
 namespace UsersData.Data.Migrations
 {
     [DbContext(typeof(UsersDataContext))]
-    partial class UsersDataContextModelSnapshot : ModelSnapshot
+    [Migration("20190128114130_Friends")]
+    partial class Friends
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,12 +57,12 @@ namespace UsersData.Data.Migrations
             modelBuilder.Entity("UsersData.Models.UserFriend", b =>
                 {
                     b.HasOne("UsersData.Models.User", "Friend")
-                        .WithMany()
+                        .WithMany("Friends")
                         .HasForeignKey("FriendId")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("UsersData.Models.User", "User")
-                        .WithMany("Friends")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });

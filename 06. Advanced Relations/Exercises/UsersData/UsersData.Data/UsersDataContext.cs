@@ -2,6 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Models;
+    using ModelsConfig;
     using P01_BillsPaymentSystem.Data;
 
     public class UsersDataContext : DbContext
@@ -17,6 +18,8 @@
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<UserFriend> UsersFriends { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -27,7 +30,8 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new UserConfig());
+            modelBuilder.ApplyConfiguration(new UserFriendConfig());
         }
     }
 }
