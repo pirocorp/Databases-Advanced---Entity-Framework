@@ -5,6 +5,12 @@
 
     public class Book
     {
+        public Book()
+        {
+            this.Categories = new HashSet<CategoryBook>();
+            this.RelatedBooks = new HashSet<BookRelatedBook>();
+        }
+
         public int BookId { get; set; }
 
         public string Title { get; set; }
@@ -21,5 +27,7 @@
         public Author Author { get; set; }
 
         public ICollection<CategoryBook> Categories { get; set; }
+
+        public ICollection<BookRelatedBook> RelatedBooks { get; set; }
     }
 }

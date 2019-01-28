@@ -3,14 +3,16 @@ using BookShopSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookShopSystem.Data.Migrations
 {
     [DbContext(typeof(BookShopSystemContext))]
-    partial class BookShopSystemContextModelSnapshot : ModelSnapshot
+    [Migration("20190128172019_RelatedBooks")]
+    partial class RelatedBooks
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

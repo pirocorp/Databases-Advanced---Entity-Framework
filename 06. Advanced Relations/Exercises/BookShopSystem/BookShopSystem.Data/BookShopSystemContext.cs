@@ -23,6 +23,8 @@
 
         public DbSet<CategoryBook> CategoriesBooks { get; set; }
 
+        public DbSet<BookRelatedBook> RelatedBooks { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -37,6 +39,7 @@
             modelBuilder.ApplyConfiguration(new BookConfig());
             modelBuilder.ApplyConfiguration(new CategoryBookConfig());
             modelBuilder.ApplyConfiguration(new CategoryConfig());
+            modelBuilder.ApplyConfiguration(new BookRelatedBookConfig());
         }
     }
 }
