@@ -16,6 +16,8 @@
         public int UserId { get; set; }
         public User User { get; set; }
 
-        public ICollection<AlbumPicture> Pictures { get; set; } 
+        public ICollection<AlbumPicture> Pictures { get; set; }
+
+        public ICollection<AlbumTag> Tags { get; set; }
     }
 }

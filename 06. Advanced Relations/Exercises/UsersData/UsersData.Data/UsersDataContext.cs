@@ -20,7 +20,11 @@
 
         public DbSet<AlbumPicture> AlbumsPictures { get; set; }
 
+        public DbSet<AlbumTag> AlbumsTags { get; set; }
+
         public DbSet<Picture> Pictures { get; set; }
+
+        public DbSet<Tag> Tags { get; set; }
 
         public DbSet<User> Users { get; set; }
 
@@ -38,7 +42,9 @@
         {
             modelBuilder.ApplyConfiguration(new AlbumConfig());
             modelBuilder.ApplyConfiguration(new AlbumPictureConfig());
+            modelBuilder.ApplyConfiguration(new AlbumTagConfig());
             modelBuilder.ApplyConfiguration(new PictureConfig());
+            modelBuilder.ApplyConfiguration(new TagConfig());
             modelBuilder.ApplyConfiguration(new UserConfig());
             modelBuilder.ApplyConfiguration(new UserFriendConfig());
         }
