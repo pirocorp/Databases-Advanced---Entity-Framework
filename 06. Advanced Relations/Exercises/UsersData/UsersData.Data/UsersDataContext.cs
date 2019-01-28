@@ -16,6 +16,12 @@
         {
         }
 
+        public DbSet<Album> Albums { get; set; }
+
+        public DbSet<AlbumPicture> AlbumsPictures { get; set; }
+
+        public DbSet<Picture> Pictures { get; set; }
+
         public DbSet<User> Users { get; set; }
 
         public DbSet<UserFriend> UsersFriends { get; set; }
@@ -30,6 +36,9 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new AlbumConfig());
+            modelBuilder.ApplyConfiguration(new AlbumPictureConfig());
+            modelBuilder.ApplyConfiguration(new PictureConfig());
             modelBuilder.ApplyConfiguration(new UserConfig());
             modelBuilder.ApplyConfiguration(new UserFriendConfig());
         }

@@ -17,5 +17,7 @@
         public string Email { get; set; }
 
         public ICollection<UserFriend> Friends { get; set; }
+
+        public ICollection<Album> Albums { get; set; }
     }
 }
