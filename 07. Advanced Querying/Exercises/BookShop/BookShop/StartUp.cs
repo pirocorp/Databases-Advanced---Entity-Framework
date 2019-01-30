@@ -17,7 +17,7 @@
             using (var db = new BookShopContext())
             {
                 //var input = int.Parse(Console.ReadLine());
-                var result = RemoveBooks(db);
+                var result = GetMostRecentBooks(db);
                 Console.WriteLine(result);
             }
         }
@@ -63,6 +63,24 @@
                 .ToDictionary(x => x.Key, x => x.Value.OrderByDescending(b => b.ReleaseDate).Take(3).ToArray())
                 .OrderBy(x => x.Key)
                 .ToArray();
+
+            //Another Solution --> Leads to N + 1 queries
+            //var otherCategories = context.Categories
+            //    .OrderBy(x => x.Name)
+            //    .Select(x => new
+            //    {
+            //        x.Name,
+            //        Books = x.CategoryBooks.Select(b => new
+            //            {
+            //                b.Book.Title,
+            //                b.Book.ReleaseDate
+            //            })
+            //            .OrderByDescending(r => r.ReleaseDate)
+            //            .Take(3)
+            //            .ToArray()
+            //
+            //    })
+            //    .ToArray();
 
             var result = new StringBuilder();
 
