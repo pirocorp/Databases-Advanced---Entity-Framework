@@ -81,6 +81,9 @@
 
         public static string GetTotalProfitByCategory(BookShopContext context)
         {
+            //There is no reason to use include before select!
+            //If you change the query so that it no longer returns instances of the entity type that the query began with,
+            //then the include operators are ignored.
             var books = context.Categories
                 .Include(c => c.CategoryBooks)
                 .ThenInclude(cb => cb.Book)
@@ -101,7 +104,6 @@
         public static string CountCopiesByAuthor(BookShopContext context)
         {
             var copiesByAuthor = context.Authors
-                .Include(a => a.Books)
                 .Select(a => new
                 {
                     a.FirstName,
