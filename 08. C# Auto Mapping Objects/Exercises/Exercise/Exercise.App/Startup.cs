@@ -9,7 +9,7 @@
 
     using Core;
     using Core.Contracts;
-    using Core.Controllers;
+    using Core.Services;
     using Data;
     using Services;
     using Services.Contracts;
@@ -34,9 +34,9 @@
 
             serviceCollection.AddTransient<ICommandInterpreter, CommandInterpreter>();
 
-            serviceCollection.AddTransient<IEmployeeController, EmployeeController>();
+            serviceCollection.AddTransient<IEmployeeService, EmployeeService>();
 
-            serviceCollection.AddTransient<IManagerController, ManagerController>();
+            serviceCollection.AddTransient<IManagerService, ManagerService>();
 
             serviceCollection.AddAutoMapper(conf => conf.AddProfile(new ExerciseProfile()));
 

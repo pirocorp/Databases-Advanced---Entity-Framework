@@ -1,20 +1,19 @@
-﻿namespace Exercise.App.Core.Controllers
+﻿namespace Exercise.App.Core.Services
 {
     using System;
     using System.Linq;
     using AutoMapper;
-
     using Contracts;
     using Data;
     using Dtos;
     using Microsoft.EntityFrameworkCore;
 
-    public class ManagerController : IManagerController
+    public class ManagerService : IManagerService
     {
         private readonly ExerciseContext context;
         private readonly IMapper mapper;
 
-        public ManagerController(ExerciseContext context, IMapper mapper)
+        public ManagerService(ExerciseContext context, IMapper mapper)
         {
             this.context = context;
             this.mapper = mapper;

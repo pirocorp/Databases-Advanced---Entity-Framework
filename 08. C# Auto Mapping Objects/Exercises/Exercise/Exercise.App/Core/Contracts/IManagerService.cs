@@ -2,7 +2,7 @@
 {
     using Dtos;
 
-    public interface IManagerController
+    public interface IManagerService
     {
         SetManagerDto SetManager(int employeeId, int managerId);
 

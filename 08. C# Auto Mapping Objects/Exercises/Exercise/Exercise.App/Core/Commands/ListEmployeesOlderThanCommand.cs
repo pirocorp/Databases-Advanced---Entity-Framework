@@ -6,18 +6,18 @@
 
     public class ListEmployeesOlderThanCommand : ICommand
     {
-        private readonly IEmployeeController employeeController;
+        private readonly IEmployeeService employeeService;
 
-        public ListEmployeesOlderThanCommand(IEmployeeController employeeController)
+        public ListEmployeesOlderThanCommand(IEmployeeService employeeService)
         {
-            this.employeeController = employeeController;
+            this.employeeService = employeeService;
         }
 
         public string Execute(string[] args)
         {
             var age = int.Parse(args[0]);
 
-            var listEmployeesOlderThanDtos = this.employeeController.GetListEmployeesOlderThan(age);
+            var listEmployeesOlderThanDtos = this.employeeService.GetListEmployeesOlderThan(age);
 
             var result = new StringBuilder();
 

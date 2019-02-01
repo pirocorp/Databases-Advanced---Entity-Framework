@@ -5,11 +5,11 @@
 
     public class SetManagerCommand : ICommand
     {
-        private readonly IManagerController managerController;
+        private readonly IManagerService managerService;
 
-        public SetManagerCommand(IManagerController managerController)
+        public SetManagerCommand(IManagerService managerService)
         {
-            this.managerController = managerController;
+            this.managerService = managerService;
         }
 
         public string Execute(string[] args)
@@ -18,7 +18,7 @@
 
             var managerId = int.Parse(args[1]);
 
-            var dto = this.managerController.SetManager(employeeId, managerId);
+            var dto = this.managerService.SetManager(employeeId, managerId);
 
             return $"Manager for {dto.FirstName} {dto.LastName} is set to: {dto.ManagerFirstName} {dto.ManagerLastName}";
         }

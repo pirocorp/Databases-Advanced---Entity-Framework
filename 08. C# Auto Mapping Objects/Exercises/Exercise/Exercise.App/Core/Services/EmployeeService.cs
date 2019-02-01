@@ -1,4 +1,4 @@
-﻿namespace Exercise.App.Core.Controllers
+﻿namespace Exercise.App.Core.Services
 {
     using System;
     using System.Collections.Generic;
@@ -11,12 +11,12 @@
     using Dtos;
     using Models;
 
-    public class EmployeeController : IEmployeeController
+    public class EmployeeService : IEmployeeService
     {
         private readonly ExerciseContext context;
         private readonly IMapper mapper;
 
-        public EmployeeController(ExerciseContext context, IMapper mapper)
+        public EmployeeService(ExerciseContext context, IMapper mapper)
         {
             this.context = context;
             this.mapper = mapper;

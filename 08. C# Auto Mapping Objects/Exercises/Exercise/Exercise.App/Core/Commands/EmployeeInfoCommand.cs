@@ -4,18 +4,18 @@
 
     public class EmployeeInfoCommand : ICommand
     {
-        private readonly IEmployeeController employeeController;
+        private readonly IEmployeeService employeeService;
 
-        public EmployeeInfoCommand(IEmployeeController employeeController)
+        public EmployeeInfoCommand(IEmployeeService employeeService)
         {
-            this.employeeController = employeeController;
+            this.employeeService = employeeService;
         }
 
         public string Execute(string[] args)
         {
             var id = int.Parse(args[0]);
 
-            var employeeDto = this.employeeController.GetEmployeeInfo(id);
+            var employeeDto = this.employeeService.GetEmployeeInfo(id);
 
             return $"ID: {employeeDto.Id} - {employeeDto.FirstName} {employeeDto.LastName} -  ${employeeDto.Salary:F2}";
         }

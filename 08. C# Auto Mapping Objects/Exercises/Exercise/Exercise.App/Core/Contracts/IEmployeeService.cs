@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using Dtos;
 
-    public interface IEmployeeController
+    public interface IEmployeeService
     {
         void AddEmployee(EmployeeDto employeeDto);
 

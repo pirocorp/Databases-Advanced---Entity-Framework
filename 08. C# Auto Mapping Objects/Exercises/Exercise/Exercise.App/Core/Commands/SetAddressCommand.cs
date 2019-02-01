@@ -5,11 +5,11 @@
 
     public class SetAddressCommand : ICommand
     {
-        private readonly IEmployeeController employeeController;
+        private readonly IEmployeeService employeeService;
 
-        public SetAddressCommand(IEmployeeController employeeController)
+        public SetAddressCommand(IEmployeeService employeeService)
         {
-            this.employeeController = employeeController;
+            this.employeeService = employeeService;
         }
 
         public string Execute(string[] args)
@@ -18,7 +18,7 @@
 
             var address = string.Join(" ", args.Skip(1));
 
-            var dto = this.employeeController.SetAddress(id, address);
+            var dto = this.employeeService.SetAddress(id, address);
             return $"{dto.FirstName} {dto.LastName} address was set to: {dto.Address}";
         }
     }

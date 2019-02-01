@@ -5,11 +5,11 @@
 
     public class AddEmployeeCommand : ICommand
     {
-        private readonly IEmployeeController employeeController;
+        private readonly IEmployeeService employeeService;
 
-        public AddEmployeeCommand(IEmployeeController employeeController)
+        public AddEmployeeCommand(IEmployeeService employeeService)
         {
-            this.employeeController = employeeController;
+            this.employeeService = employeeService;
         }
 
         public string Execute(string[] args)
@@ -25,7 +25,7 @@
                 Salary = salary
             };
 
-            this.employeeController.AddEmployee(employeeDto);
+            this.employeeService.AddEmployee(employeeDto);
             return $"Employee {firstName} {lastName} was added successfully";
         }
     }

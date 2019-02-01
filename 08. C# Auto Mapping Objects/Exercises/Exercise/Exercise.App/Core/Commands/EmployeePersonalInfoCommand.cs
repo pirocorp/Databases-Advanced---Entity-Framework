@@ -6,18 +6,18 @@
 
     public class EmployeePersonalInfoCommand : ICommand
     {
-        private readonly IEmployeeController employeeController;
+        private readonly IEmployeeService employeeService;
 
-        public EmployeePersonalInfoCommand(IEmployeeController employeeController)
+        public EmployeePersonalInfoCommand(IEmployeeService employeeService)
         {
-            this.employeeController = employeeController;
+            this.employeeService = employeeService;
         }
 
         public string Execute(string[] args)
         {
             var id = int.Parse(args[0]);
 
-            var dto = this.employeeController.GetEmployeePersonalInfo(id);
+            var dto = this.employeeService.GetEmployeePersonalInfo(id);
 
             return $"ID: {dto.Id} - {dto.FirstName} {dto.LastName} - ${dto.Salary:F2}" + Environment.NewLine +
                    $"Birthday: {dto.Birthday?.ToString("dd-MM-yyyy")}" + Environment.NewLine +

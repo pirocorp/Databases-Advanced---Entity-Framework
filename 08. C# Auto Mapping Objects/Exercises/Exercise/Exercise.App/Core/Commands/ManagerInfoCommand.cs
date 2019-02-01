@@ -5,18 +5,18 @@
 
     public class ManagerInfoCommand : ICommand
     {
-        private readonly IManagerController managerController;
+        private readonly IManagerService managerService;
 
-        public ManagerInfoCommand(IManagerController managerController)
+        public ManagerInfoCommand(IManagerService managerService)
         {
-            this.managerController = managerController;
+            this.managerService = managerService;
         }
 
         public string Execute(string[] args)
         {
             var employeeId = int.Parse(args[0]);
 
-            var managerDto = this.managerController.GetManagerInfo(employeeId);
+            var managerDto = this.managerService.GetManagerInfo(employeeId);
 
             var sb = new StringBuilder();
             sb.AppendLine($"{managerDto.FirstName} {managerDto.LastName} | Employees: {managerDto.EmployeesCount}");
