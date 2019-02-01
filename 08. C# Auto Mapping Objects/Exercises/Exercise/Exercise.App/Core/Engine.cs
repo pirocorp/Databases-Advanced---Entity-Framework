@@ -28,9 +28,15 @@
             {
                 var input = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
-                var result = commandInterpreter.Read(input);
-
-                Console.WriteLine(result);
+                try
+                {
+                    var result = commandInterpreter.Read(input);
+                    Console.WriteLine(result);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             }
         }
     }

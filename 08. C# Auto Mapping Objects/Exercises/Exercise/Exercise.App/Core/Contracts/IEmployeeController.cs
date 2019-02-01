@@ -8,9 +8,9 @@
     {
         void AddEmployee(EmployeeDto employeeDto);
 
-        void SetBirthday(int employeeId, DateTime date);
+        EmployeeSetBirthdayDto SetBirthday(int employeeId, DateTime date);
 
-        void SetAddress(int employeeId, string address);
+        EmployeeSetAddressDto SetAddress(int employeeId, string address);
 
         EmployeeDto GetEmployeeInfo(int employeeId);
 

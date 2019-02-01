@@ -4,7 +4,6 @@
     using System.Linq;
     using System.Reflection;
 
-    using Commands;
     using Contracts;
 
     public class CommandInterpreter : ICommandInterpreter
@@ -36,11 +35,11 @@
                 .Select(p => p.ParameterType)
                 .ToArray();
 
-            var service = constructorParameters
+            var services = constructorParameters
                 .Select(this.serviceProvider.GetService)
                 .ToArray();
 
-            var command = (ICommand)constructor.Invoke(service);
+            var command = (ICommand) constructor.Invoke(services);
             var result = command.Execute(args);
 
             return result;

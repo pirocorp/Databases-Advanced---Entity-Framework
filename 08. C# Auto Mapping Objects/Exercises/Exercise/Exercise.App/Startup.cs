@@ -1,10 +1,11 @@
 ﻿namespace Exercise.App
 {
     using System;
-    using AutoMapper;
 
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.DependencyInjection;
+
+    using AutoMapper;
 
     using Core;
     using Core.Contracts;
@@ -35,9 +36,9 @@
 
             serviceCollection.AddTransient<IEmployeeController, EmployeeController>();
 
-            serviceCollection.AddAutoMapper(conf => conf.AddProfile(new ExerciseProfile()));
-
             serviceCollection.AddTransient<IManagerController, ManagerController>();
+
+            serviceCollection.AddAutoMapper(conf => conf.AddProfile(new ExerciseProfile()));
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
             return serviceProvider;

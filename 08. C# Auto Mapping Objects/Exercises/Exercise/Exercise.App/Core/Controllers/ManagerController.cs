@@ -20,7 +20,7 @@
             this.mapper = mapper;
         }
 
-        public void SetManager(int employeeId, int managerId)
+        public SetManagerDto SetManager(int employeeId, int managerId)
         {
             var employee = this.context.Employees.Find(employeeId);
 
@@ -33,6 +33,8 @@
 
             employee.Manager = manager;
             this.context.SaveChanges();
+
+            return this.mapper.Map<SetManagerDto>(employee);
         }
 
         public ManagerDto GetManagerInfo(int employeeId)

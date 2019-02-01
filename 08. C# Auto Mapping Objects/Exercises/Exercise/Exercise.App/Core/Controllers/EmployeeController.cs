@@ -29,7 +29,7 @@
             this.context.SaveChanges();
         }
 
-        public void SetAddress(int employeeId, string address)
+        public EmployeeSetAddressDto SetAddress(int employeeId, string address)
         {
             var employee = this.context.Employees.Find(employeeId);
             if (employee == null)
@@ -39,9 +39,11 @@
 
             employee.Address = address;
             this.context.SaveChanges();
+
+            return this.mapper.Map<EmployeeSetAddressDto>(employee);
         }
 
-        public void SetBirthday(int employeeId, DateTime date)
+        public EmployeeSetBirthdayDto SetBirthday(int employeeId, DateTime date)
         {
             var employee = this.context.Employees.Find(employeeId);
             if (employee == null)
@@ -51,6 +53,8 @@
 
             employee.Birthday = date;
             this.context.SaveChanges();
+
+            return this.mapper.Map<EmployeeSetBirthdayDto>(employee);
         }
 
         public EmployeeDto GetEmployeeInfo(int employeeId)

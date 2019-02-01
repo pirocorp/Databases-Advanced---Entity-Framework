@@ -18,9 +18,9 @@
 
             var managerId = int.Parse(args[1]);
 
-            this.managerController.SetManager(employeeId, managerId);
+            var dto = this.managerController.SetManager(employeeId, managerId);
 
-            return $"Command accomplished successfully!";
+            return $"Manager for {dto.FirstName} {dto.LastName} is set to: {dto.ManagerFirstName} {dto.ManagerLastName}";
         }
     }
 }

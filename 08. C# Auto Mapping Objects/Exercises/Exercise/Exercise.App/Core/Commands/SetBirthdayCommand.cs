@@ -17,8 +17,8 @@
             var id = int.Parse(args[0]);
             var date = DateTime.ParseExact(args[1], "dd-MM-yyyy", null);
 
-            this.employeeController.SetBirthday(id, date);
-            return "Command accomplished successfully!";
+            var dto = this.employeeController.SetBirthday(id, date);
+            return $"{dto.FirstName} {dto.LastName} birthdate was set to: {dto.Birthday:dd-MM-yyyy}";
         }
     }
 }

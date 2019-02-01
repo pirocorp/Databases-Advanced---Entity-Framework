@@ -4,7 +4,7 @@
 
     public interface IManagerController
     {
-        void SetManager(int employeeId, int managerId);
+        SetManagerDto SetManager(int employeeId, int managerId);
 
         ManagerDto GetManagerInfo(int employeeId);
     }

@@ -18,8 +18,8 @@
 
             var address = string.Join(" ", args.Skip(1));
 
-            this.employeeController.SetAddress(id, address);
-            return "Command accomplished successfully!";
+            var dto = this.employeeController.SetAddress(id, address);
+            return $"{dto.FirstName} {dto.LastName} address was set to: {dto.Address}";
         }
     }
 }
