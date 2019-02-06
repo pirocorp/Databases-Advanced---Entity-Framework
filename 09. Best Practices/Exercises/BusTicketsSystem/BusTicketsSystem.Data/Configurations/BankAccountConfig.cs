@@ -15,8 +15,8 @@
                 .WithMany(c => c.BankAccounts)
                 .HasForeignKey(e => e.CustomerId);
 
-            //builder.HasIndex(e => e.AccountNumber)
-            //    .IsUnique();
+            builder.HasIndex(e => e.AccountNumber)
+                .IsUnique();
 
             builder.Property(e => e.AccountNumber)
                 .IsRequired()

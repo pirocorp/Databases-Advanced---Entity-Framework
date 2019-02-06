@@ -9,10 +9,10 @@
         public string Name { get; set; }
 
         public int CountryId { get; set; }
-        public Country Country { get; set; }
+        public virtual Country Country { get; set; }
 
-        public ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
 
-        public ICollection<BusStation> BusStations { get; set; }
+        public virtual ICollection<BusStation> BusStations { get; set; }
     }
 }

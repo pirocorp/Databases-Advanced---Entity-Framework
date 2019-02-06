@@ -9,6 +9,8 @@
     <Compile Remove="Migrations\20190205152141_Initial.cs" />
     <Compile Remove="Migrations\20190205152236_Initial.cs" />
     <Compile Remove="Migrations\20190205152414_Initial.cs" />
+    <Compile Remove="Migrations\20190206113904_AddUniqueConstraints.cs" />
+    <Compile Remove="Migrations\20190206114456_AddUniqueConstraints.cs" />
   </ItemGroup>
 
   <ItemGroup>

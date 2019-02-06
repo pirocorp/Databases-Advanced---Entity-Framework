@@ -11,8 +11,8 @@
         public double Rating { get; set; }
 
         public int CountryId { get; set; }
-        public Country Country { get; set; }
+        public virtual Country Country { get; set; }
 
-        public ICollection<Trip> Trips { get; set; }
+        public virtual ICollection<Trip> Trips { get; set; }
     }
 }

@@ -9,12 +9,12 @@
         public string Name { get; set; }
 
         public int TownId { get; set; }
-        public Town Town { get; set; }
+        public virtual Town Town { get; set; }
 
-        public ICollection<Trip> TripsStartsFromHere { get; set; }
+        public virtual ICollection<Trip> Arrivals { get; set; }
 
-        public ICollection<Trip> TripsToHere { get; set; }
+        public virtual ICollection<Trip> Departure { get; set; }
 
-        public ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
     }
 }

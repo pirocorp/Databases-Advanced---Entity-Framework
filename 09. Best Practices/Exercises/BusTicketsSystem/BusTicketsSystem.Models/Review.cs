@@ -13,9 +13,9 @@
         public DateTime DateTimeOfPublishing { get; set; }
 
         public int BusStationId { get; set; }
-        public BusStation BusStation { get; set; }
+        public virtual BusStation BusStation { get; set; }
 
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

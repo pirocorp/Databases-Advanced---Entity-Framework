@@ -1,9 +1,6 @@
 ﻿namespace BusTicketsSystem.Client.Core.Commands
 {
     using System;
-    using System.Text;
-    using AutoMapper;
-    using Dtos;
     using Dtos.BankAccountDtos;
     using Interfaces;
     using Services.Interfaces;

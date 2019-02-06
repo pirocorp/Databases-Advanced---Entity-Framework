@@ -37,6 +37,9 @@ namespace BusTicketsSystem.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AccountNumber")
+                        .IsUnique();
+
                     b.HasIndex("CustomerId");
 
                     b.ToTable("BankAccounts");
@@ -96,6 +99,9 @@ namespace BusTicketsSystem.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Name")
+                        .IsUnique();
+
                     b.ToTable("Countries");
                 });
 
@@ -145,7 +151,7 @@ namespace BusTicketsSystem.Data.Migrations
 
                     b.Property<DateTime>("DateTimeOfPublishing")
                         .ValueGeneratedOnAdd()
-                        .HasDefaultValue(new DateTime(2019, 2, 5, 16, 25, 17, 935, DateTimeKind.Local).AddTicks(8139));
+                        .HasDefaultValueSql("GETUTCDATE()");
 
                     b.Property<double>("Grade")
                         .ValueGeneratedOnAdd()
@@ -222,7 +228,9 @@ namespace BusTicketsSystem.Data.Migrations
 
                     b.Property<int>("OriginBusStationId");
 
-                    b.Property<int>("Status");
+                    b.Property<int>("Status")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(0);
 
                     b.HasKey("Id");
 

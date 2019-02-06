@@ -14,6 +14,7 @@
             this.bankAccountService = bankAccountService;
         }
 
+        //BankAccountDetails <bankId>
         public string Execute(string[] args)
         {
             var bankAccId = int.Parse(args[0]);

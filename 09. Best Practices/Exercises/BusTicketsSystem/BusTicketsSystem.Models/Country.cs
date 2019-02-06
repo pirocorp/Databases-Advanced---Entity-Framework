@@ -8,8 +8,8 @@
 
         public string Name { get; set; }
 
-        public ICollection<BusCompany> BusCompanies { get; set; }
+        public virtual ICollection<BusCompany> BusCompanies { get; set; }
 
-        public ICollection<Town> Towns { get; set; }
+        public virtual ICollection<Town> Towns { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 {
     public enum Status
     {
+        Scheduled,
         Departed,
         Arrived,
         Delayed,

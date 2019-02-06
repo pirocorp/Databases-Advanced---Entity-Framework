@@ -1,7 +1,5 @@
 ﻿namespace BusTicketsSystem.Data.Configurations
 {
-    using System;
-
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -29,7 +27,7 @@
                 .HasDefaultValue(0);
 
             builder.Property(e => e.DateTimeOfPublishing)
-                .HasDefaultValue(DateTime.Now);
+                .HasDefaultValueSql("GETUTCDATE()");
         }
     }
 }

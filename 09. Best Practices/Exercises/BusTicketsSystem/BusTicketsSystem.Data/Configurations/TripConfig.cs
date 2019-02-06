@@ -13,11 +13,11 @@
             builder.HasKey(e => e.Id);
 
             builder.HasOne(e => e.OriginBusStation)
-                .WithMany(b => b.TripsStartsFromHere)
+                .WithMany(b => b.Departure)
                 .HasForeignKey(e => e.OriginBusStationId);
 
             builder.HasOne(e => e.DestinationBusStation)
-                .WithMany(b => b.TripsToHere)
+                .WithMany(b => b.Arrivals)
                 .HasForeignKey(e => e.DestinationBusStationId)
                 .OnDelete(DeleteBehavior.Restrict);
 
@@ -25,6 +25,9 @@
                 .WithMany(b => b.Trips)
                 .HasForeignKey(e => e.BusCompanyId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Property(e => e.Status)
+                .HasDefaultValue(Status.Scheduled);
         }
     }
 }
