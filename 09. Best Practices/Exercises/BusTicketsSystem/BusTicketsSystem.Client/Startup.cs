@@ -8,13 +8,12 @@
     using Microsoft.Extensions.DependencyInjection;
 
     using AutoMapper;
+
     using Core;
     using Core.Interfaces;
     using Core.IO;
     using Core.Profiles;
     using Data;
-    using Microsoft.EntityFrameworkCore.Infrastructure;
-    using Microsoft.EntityFrameworkCore.Internal;
     using Services;
     using Services.Interfaces;
 
@@ -56,6 +55,7 @@
             //AutoMapper --> Configuration
             serviceCollection.AddAutoMapper(cfg =>
             {
+                cfg.AddProfile<ArrivedTripProfile>();
                 cfg.AddProfile<BankAccountProfile>();
                 cfg.AddProfile<BusCompanyProfile>();
                 cfg.AddProfile<BusStationProfile>();
@@ -80,6 +80,7 @@
 
             //Database Communication Services
             serviceCollection.AddTransient<IDatabaseInitializerService, DatabaseInitializerService>();
+            serviceCollection.AddTransient<IArrivedTripService, ArrivedTripService>();
             serviceCollection.AddTransient<IBankAccountService, BankAccountService>();
             serviceCollection.AddTransient<IBusCompanyService, BusCompanyService>();
             serviceCollection.AddTransient<IBusStationService, BusStationService>();

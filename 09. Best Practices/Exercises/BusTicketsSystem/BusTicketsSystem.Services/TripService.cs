@@ -51,6 +51,20 @@
             return trip;
         }
 
+        public Trip ChangeStatus(int tripId, Status status)
+        {
+            var trip = this.context.Trips.FirstOrDefault(t => t.Id == tripId);
+
+            if (trip == null)
+            {
+                throw new ArgumentException("Trip with given id doesn't exists!");
+            }
+
+            trip.Status = status;
+            this.context.SaveChanges();
+            return trip;
+        }
+
         private IEnumerable<TModel> By<TModel>(Expression<Func<Trip, bool>> predicate)
         {
             return this.context.Trips

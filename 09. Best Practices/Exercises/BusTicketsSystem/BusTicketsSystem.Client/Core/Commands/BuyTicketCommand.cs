@@ -69,7 +69,6 @@
                 return "Seat is already taken";
             }
 
-
             this.bankAccountService.Withdraw(bankAccount.Id, price);
             var ticket = this.ticketService.Create(price, seat, customerId, tripId);
 

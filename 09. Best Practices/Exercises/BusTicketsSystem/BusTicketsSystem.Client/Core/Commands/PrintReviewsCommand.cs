@@ -1,6 +1,5 @@
 ﻿namespace BusTicketsSystem.Client.Core.Commands
 {
-    using System;
     using System.Text;
     using Interfaces;
     using Models;

@@ -11,10 +11,14 @@
         public int TownId { get; set; }
         public virtual Town Town { get; set; }
 
-        public virtual ICollection<Trip> Arrivals { get; set; }
+        public virtual ICollection<Trip> ExpectedArrivals { get; set; }
 
-        public virtual ICollection<Trip> Departure { get; set; }
+        public virtual ICollection<Trip> ExpectedDeparture { get; set; }
 
         public virtual ICollection<Review> Reviews { get; set; }
+
+        public virtual ICollection<ArrivedTrip> ActualArrivals { get; set; }
+
+        public virtual ICollection<ArrivedTrip> ActualDeparture { get; set; }
     }
 }

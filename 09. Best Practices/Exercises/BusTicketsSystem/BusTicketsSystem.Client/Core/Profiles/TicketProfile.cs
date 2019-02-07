@@ -2,6 +2,7 @@
 {
     using AutoMapper;
 
+    using Dtos.TicketDtos;
     using Models;
     using Services.Dtos;
 
@@ -12,6 +13,8 @@
             this.CreateMap<Ticket, Ticket>();
 
             this.CreateMap<Ticket, TicketExistsByIdDto>();
+
+            this.CreateMap<Ticket, PassengerCountDto>();
         }
     }
 }

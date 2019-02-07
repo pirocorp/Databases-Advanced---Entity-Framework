@@ -35,6 +35,9 @@
         public bool Exists(string name)
             => this.ByName<BankAccountExistsByBankAccountDto>(name) != null;
 
+        public IEnumerable<TModel> FindBy<TModel>(Expression<Func<BankAccount, bool>> predicate)
+            => this.By<TModel>(predicate);
+
         public BankAccount Create(string accountNumber, int customerId)
         {
             var bankAccount = new BankAccount()
@@ -47,9 +50,6 @@
             this.context.SaveChanges();
             return bankAccount;
         }
-
-        public IEnumerable<TModel> FindBy<TModel>(Expression<Func<BankAccount, bool>> predicate)
-            => this.By<TModel>(predicate);
 
         public void Withdraw(int accId, decimal amount)
         {

@@ -5,6 +5,7 @@
     using System.Linq.Expressions;
 
     using Models;
+    using Models.Enums;
 
     public interface ITripService
     {
@@ -16,5 +17,7 @@
 
         Trip Create(DateTime departureTime, DateTime arrivalTime, int originBusStationId,
             int destinationBusStationId, int busCompanyId);
+
+        Trip ChangeStatus(int tripId, Status status);
     }
 }

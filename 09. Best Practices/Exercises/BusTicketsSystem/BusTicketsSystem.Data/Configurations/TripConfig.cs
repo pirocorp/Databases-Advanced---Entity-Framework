@@ -13,11 +13,11 @@
             builder.HasKey(e => e.Id);
 
             builder.HasOne(e => e.OriginBusStation)
-                .WithMany(b => b.Departure)
+                .WithMany(b => b.ExpectedDeparture)
                 .HasForeignKey(e => e.OriginBusStationId);
 
             builder.HasOne(e => e.DestinationBusStation)
-                .WithMany(b => b.Arrivals)
+                .WithMany(b => b.ExpectedArrivals)
                 .HasForeignKey(e => e.DestinationBusStationId)
                 .OnDelete(DeleteBehavior.Restrict);
 

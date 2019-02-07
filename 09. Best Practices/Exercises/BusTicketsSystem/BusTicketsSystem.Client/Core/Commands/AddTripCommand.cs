@@ -34,6 +34,7 @@
                 busCompanyId);
 
             //Lazy loading does not work with newly created objects
+            //Lazy loading can be done only for Original database objects
             trip = this.tripService.ById<Trip>(trip.Id); 
 
             return $"{trip.Id}: {trip.DepartureTime.ToString(DATETIME_FORMAT)} - {trip.ArrivalTime.ToString(DATETIME_FORMAT)}" +

@@ -47,6 +47,7 @@
                 return "Grade must be in range [0 - 5]";
             }
 
+            //Lazy loading can be done only for Original database objects
             var review = this.reviewService.Create(content, busStationId, customerId, grade);
             review = this.reviewService.ById<Review>(review.Id);
 

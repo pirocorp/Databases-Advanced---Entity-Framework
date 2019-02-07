@@ -4,14 +4,16 @@ using BusTicketsSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BusTicketsSystem.Data.Migrations
 {
     [DbContext(typeof(BusTicketsContext))]
-    partial class BusTicketsContextModelSnapshot : ModelSnapshot
+    [Migration("20190206192614_ArrivedTrip")]
+    partial class ArrivedTrip
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

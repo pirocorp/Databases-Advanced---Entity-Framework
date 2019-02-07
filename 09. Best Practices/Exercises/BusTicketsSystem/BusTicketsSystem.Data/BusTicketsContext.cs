@@ -16,6 +16,8 @@
         {
         }
 
+        public DbSet<ArrivedTrip> ArrivedTrips { get; set; }
+
         public DbSet<BankAccount> BankAccounts { get; set; }
 
         public DbSet<BusCompany> BusCompanies { get; set; }
@@ -36,6 +38,7 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new ArrivedTripConfig());
             modelBuilder.ApplyConfiguration(new BankAccountConfig());
             modelBuilder.ApplyConfiguration(new BusCompanyConfig());
             modelBuilder.ApplyConfiguration(new BusStationConfig());

@@ -2,6 +2,7 @@
 {
     using AutoMapper;
 
+    using Dtos.TripDtos;
     using Models;
     using Services.Dtos;
 
@@ -12,6 +13,8 @@
             this.CreateMap<Trip, Trip>();
 
             this.CreateMap<Trip, TripExistsByIdDto>();
+
+            this.CreateMap<Trip, TripStatusDto>();
         }
     }
 }
