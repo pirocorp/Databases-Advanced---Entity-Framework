@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProductDto>
+  <Id>1</Id>
+  <Name>Book</Name>
+  <Description>Good Book</Description>
+  <Price>24.95</Price>
+</ProductDto>
