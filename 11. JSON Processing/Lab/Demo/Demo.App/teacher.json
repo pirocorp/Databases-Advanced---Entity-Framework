@@ -1,0 +1,16 @@
+﻿{
+  "Persons": [
+    {
+      "firstName": "Vladimir",
+      "lastName": "Georgiev",
+      "jobTitle": "Technical Trainer",
+      "Age": 30
+    },
+    {
+      "firstName": "Pencho",
+      "lastName": "Penchev",
+      "jobTitle": "Support",
+      "Age": 30
+    }
+  ] 
+}
