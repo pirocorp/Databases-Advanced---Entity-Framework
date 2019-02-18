@@ -1,0 +1,72 @@
+﻿<Window x:Class="RelicFinder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RelicFinder"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <!--Creating template for Model Relic Something as Dto but for presentation-->
+    <!--<Window.Resources>
+        <DataTemplate DataType="{x:Type data:Relic}">
+            <TextBlock Text="{Binding Name}"/>
+        </DataTemplate>
+    </Window.Resources>-->
+    <!--Creating Grid for responsive design-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23"/>
+            <RowDefinition />
+            <RowDefinition Height="23"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <!--Creating Menu-->
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
+            <MenuItem Header="_File">
+                <MenuItem Header="_Add" Click="AddElement"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <!--ListView with our elements from template-->
+        <ListView x:Name="RelicList" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding}" IsSynchronizedWithCurrentItem="True">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding Type}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!--On the right screen printing description-->
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" Grid.Column="1" Margin="5, 0, 0, 50">
+            <StackPanel Orientation="Vertical"  >
+                <Label Content="Name" Target="{Binding ElementName=NameBox}" />
+                <TextBox x:Name="NameBox" Text="{Binding Name, Mode=TwoWay}" Margin="5, 5" Padding="5"/>
+
+                <Label Content="Type" Target="{Binding ElementName=TypeBox}" />
+                <TextBox x:Name="TypeBox" Text="{Binding Type, Mode=TwoWay}" Margin="5, 5" Padding="5"/>
+
+                <Label Content="Description" Target="{Binding ElementName=DescriptionBox}" />
+                <local:ScrollingTextBox x:Name="DescriptionBox" Text="{Binding Description, Mode=TwoWay}" 
+                                        TextWrapping="Wrap" Margin="5, 5" Padding="5" AcceptsReturn="True"/>
+            </StackPanel>
+        </ScrollViewer>
+
+
+        <!--ListView with our elements from template-->
+        <Button Grid.Column="1" Grid.Row="1" Content="Save changes" Height="23"
+                VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0, 0, 10, 10"
+                Click="Save_Changes_Click"/>
+        <!--Status bar-->
+        <StatusBar Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="2">
+            <StatusBarItem>
+                <TextBlock Text="Status OK" />
+            </StatusBarItem>
+            <StatusBarItem>
+                <Button Content="Check value" Click="CheckValue_Click" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
