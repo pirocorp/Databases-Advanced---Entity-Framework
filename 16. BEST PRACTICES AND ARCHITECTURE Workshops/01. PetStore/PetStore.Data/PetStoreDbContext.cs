@@ -27,12 +27,11 @@
             {
                 builder.UseSqlServer(DataSettings.Connection);
             }
-
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            //builder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
+            builder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
         }
     }
 }
