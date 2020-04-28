@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore", "PetStore\PetSto
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{82730821-712E-4560-8BE0-03EBCBC1A48C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.Data.Models", "PetStore.Data.Models\PetStore.Data.Models.csproj", "{99A02BE8-2932-4786-8814-613297CBCC29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.Data.Models", "Data\PetStore.Data.Models\PetStore.Data.Models.csproj", "{99A02BE8-2932-4786-8814-613297CBCC29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.Data", "PetStore.Data\PetStore.Data.csproj", "{CC7F34FE-DA54-468C-B953-C2B287F31E4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetStore.Data", "Data\PetStore.Data\PetStore.Data.csproj", "{CC7F34FE-DA54-468C-B953-C2B287F31E4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{267B3AB6-58F8-4FBE-8D34-81304BEC6303}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
