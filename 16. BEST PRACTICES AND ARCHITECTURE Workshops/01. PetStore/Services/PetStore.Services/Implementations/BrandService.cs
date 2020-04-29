@@ -47,6 +47,14 @@
             return brand.Id;
         }
 
+        public int? GetBrandIdByName(string name)
+        {
+            return this._data
+                .Brands
+                .FirstOrDefault(b => b.Name.ToLower() == name.ToLower())
+                ?.Id;
+        }
+
         public IEnumerable<BrandListingServiceModel> SearchByName(string name)
         {
             return this._data.Brands
