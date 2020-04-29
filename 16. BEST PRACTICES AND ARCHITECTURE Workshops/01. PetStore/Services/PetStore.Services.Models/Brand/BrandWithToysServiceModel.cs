@@ -1,6 +1,7 @@
 ﻿namespace PetStore.Services.Models.Brand
 {
     using System.Collections.Generic;
+    
     using Toy;
 
     public class BrandWithToysServiceModel

@@ -1,6 +1,7 @@
 ﻿namespace PetStore.Services
 {
     using System;
+
     using Data.Models;
 
     public interface IPetService
