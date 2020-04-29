@@ -7,6 +7,7 @@
     using Data;
     using Data.Models;
     using Models.Brand;
+    using Models.Toy;
     using static Data.Models.DataValidation;
 
     public class BrandService : IBrandService
@@ -56,6 +57,26 @@
                     Name = br.Name,
                 })
                 .ToList();
+        }
+
+        public BrandWithToysServiceModel FindByIdWithToys(int id)
+        {
+            return this._data
+                .Brands
+                .Where(br => br.Id == id)
+                .Select(br => new BrandWithToysServiceModel
+                {
+                    Name = br.Name,
+                    Toys = br.Toys
+                        .Select(t => new ToyListingServiceModel
+                        {
+                            Id = t.Id,
+                            Name = t.Name,
+                            Price = t.Price,
+                            TotalOrders = t.Orders.Count
+                        })
+                })
+                .FirstOrDefault();
         }
     }
 }
