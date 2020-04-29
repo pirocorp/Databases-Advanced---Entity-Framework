@@ -58,19 +58,19 @@
                 model.Profit, model.ExpirationDate, model.BrandId, model.CategoryId);
         }
 
-        public bool FoodExists(int foodId)
+        public bool Exists(int foodId)
         {
             return this._data.Foods.Any(f => f.Id == foodId);
         }
 
         public void SellFoodToUser(int foodId, int userId)
         {
-            if (!this.FoodExists(foodId))
+            if (!this.Exists(foodId))
             {
                 throw new InvalidOperationException($"Food with id {foodId} doesn't exists.");
             }
 
-            if (!this._userService.UserExists(userId))
+            if (!this._userService.Exists(userId))
             {
                 throw new InvalidOperationException($"User with id {userId} doesn't exists.");
             }

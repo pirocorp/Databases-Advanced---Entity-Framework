@@ -51,7 +51,7 @@
             return user.Id;
         }
 
-        public bool UserExists(int userId)
+        public bool Exists(int userId)
         {
             return this._data.Users.Any(u => u.Id == userId);
         }

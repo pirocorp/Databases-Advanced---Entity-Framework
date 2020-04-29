@@ -3,7 +3,7 @@
     using Data;
     using Data.Models;
 
-    public class OrderService : IOrderServices
+    public class OrderService : IOrderService
     {
         private readonly PetStoreDbContext _data;
 

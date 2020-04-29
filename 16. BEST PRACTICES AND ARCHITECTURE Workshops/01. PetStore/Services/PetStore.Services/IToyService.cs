@@ -10,7 +10,7 @@
 
         void BuyFromDistributor(AddingToyServiceModel model);
 
-        bool ToyExists(int toyId);
+        bool Exists(int toyId);
 
         void SellToyToUser(int toyId, int userId);
     }

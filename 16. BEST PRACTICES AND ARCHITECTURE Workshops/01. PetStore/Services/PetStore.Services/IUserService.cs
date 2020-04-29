@@ -4,6 +4,6 @@
     {
         int Register(string name, string email);
 
-        bool UserExists(int userId);
+        bool Exists(int userId);
     }
 }

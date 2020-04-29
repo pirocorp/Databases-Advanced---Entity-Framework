@@ -58,19 +58,19 @@
                 model.Price, model.Profit, model.BrandId, model.CategoryId);
         }
 
-        public bool ToyExists(int toyId)
+        public bool Exists(int toyId)
         {
             return this._data.Toys.Any(t => t.Id == toyId);
         }
 
         public void SellToyToUser(int toyId, int userId)
         {
-            if (!this.ToyExists(toyId))
+            if (!this.Exists(toyId))
             {
                 throw new InvalidOperationException($"Toy with id {toyId} doesn't exists.");
             }
 
-            if (!this._userService.UserExists(userId))
+            if (!this._userService.Exists(userId))
             {
                 throw new InvalidOperationException($"User with id {userId} doesn't exists.");
             }
@@ -89,7 +89,9 @@
             };
 
             this._data.Orders.Add(order);
-            //this._data;
+            this._data.ToyOrders.Add(toyOrder);
+
+            this._data.SaveChanges();
         }
     }
 }

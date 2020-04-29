@@ -11,7 +11,7 @@
 
         void BuyFromDistributor(AddingFoodServiceModel model);
 
-        bool FoodExists(int foodId);
+        bool Exists(int foodId);
 
         void SellFoodToUser(int foodId, int userId);
     }

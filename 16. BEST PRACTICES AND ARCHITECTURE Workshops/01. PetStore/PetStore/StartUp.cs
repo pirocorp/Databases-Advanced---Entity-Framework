@@ -15,7 +15,11 @@
 
             var userService = new UserService(data);
             var foodService = new FoodService(data, userService);
+            var toyService = new ToyService(data, userService);
+            var breedService = new BreedService(data);
+            var categoryService = new CategoryService(data);
 
+            var petService = new PetService(data, breedService, categoryService, userService);
             
         }
     }
