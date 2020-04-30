@@ -1,13 +1,17 @@
 ﻿namespace PetStore.Services.Implementations
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     using Data;
     using Data.Models;
+    using Models.Pet;
 
     public class PetService : IPetService
     {
+        private const int PETS_PAGE_SIZE = 25;
+
         private readonly PetStoreDbContext _data;
         private readonly IBreedService _breedService;
         private readonly ICategoryService _categoryService;
@@ -21,6 +25,40 @@
             this._breedService = breedService;
             this._categoryService = categoryService;
             this._userService = userService;
+        }
+
+        public IEnumerable<PetListingServiceModel> All(int page = 1)
+        {
+            return this._data
+                .Pets
+                .Skip((page - 1) * PETS_PAGE_SIZE)
+                .Take(PETS_PAGE_SIZE)
+                .Select(p => new PetListingServiceModel
+                {
+                    Id = p.Id,
+                    Price = p.Price,
+                    Category = p.Category.Name,
+                    Breed = p.Breed.Name
+                })
+                .ToList();
+        }
+
+        public PetDetailsServiceModel Details(int id)
+        {
+            return this._data
+                .Pets
+                .Where(p => p.Id == id)
+                .Select(p => new PetDetailsServiceModel
+                {
+                    Id = p.Id,
+                    Breed = p.Breed.Name,
+                    Category = p.Category.Name,
+                    DateOfBirth = p.DateOfBirth,
+                    Description = p.Description,
+                    Gender = p.Gender,
+                    Price = p.Price
+                })
+                .FirstOrDefault();
         }
 
         public void BuyPet(Gender gender, DateTime dateOfBirth, decimal price, 
@@ -93,6 +131,26 @@
             this._data.Orders.Add(order);
 
             this._data.SaveChanges();
+        }
+
+        public int Total()
+        {
+            return this._data.Pets.Count();
+        }
+
+        public bool Delete(int id)
+        {
+            var pet = this._data.Pets.Find(id);
+
+            if (pet == null)
+            {
+                return false;
+            }
+
+            this._data.Pets.Remove(pet);
+            this._data.SaveChanges();
+
+            return true;
         }
     }
 }
