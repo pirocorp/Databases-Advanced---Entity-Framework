@@ -9,9 +9,11 @@
     {
         public void Configure(EntityTypeBuilder<Position> builder)
         {
-            builder.HasKey(p => p.PositionId);
+            builder
+                .HasKey(p => p.PositionId);
 
-            builder.Property(p => p.Name)
+            builder
+                .Property(p => p.Name)
                 .IsRequired()
                 .HasMaxLength(30);
         }

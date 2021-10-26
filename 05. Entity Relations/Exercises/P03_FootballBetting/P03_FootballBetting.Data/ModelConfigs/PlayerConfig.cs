@@ -11,20 +11,26 @@
         {
             builder.HasKey(p => p.PlayerId);
 
-            builder.Property(p => p.Name)
+            builder
+                .Property(p => p.Name)
                 .IsRequired()
                 .HasMaxLength(100);
 
-            builder.Property(p => p.IsInjured)
+            builder
+                .Property(p => p.IsInjured)
                 .HasDefaultValue(false);
 
-            builder.HasOne(p => p.Team)
+            builder
+                .HasOne(p => p.Team)
                 .WithMany(t => t.Players)
-                .HasForeignKey(t => t.TeamId);
+                .HasForeignKey(t => t.TeamId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(p => p.Position)
+            builder
+                .HasOne(p => p.Position)
                 .WithMany(t => t.Players)
-                .HasForeignKey(t => t.PositionId);
+                .HasForeignKey(t => t.PositionId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

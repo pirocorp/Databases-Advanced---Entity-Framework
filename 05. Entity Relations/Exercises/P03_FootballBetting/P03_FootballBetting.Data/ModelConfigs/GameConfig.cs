@@ -9,14 +9,17 @@
     {
         public void Configure(EntityTypeBuilder<Game> builder)
         {
-            builder.HasKey(g => g.GameId);
+            builder
+                .HasKey(g => g.GameId);
 
-            builder.HasOne(g => g.HomeTeam)
+            builder
+                .HasOne(g => g.HomeTeam)
                 .WithMany(t => t.HomeGames)
                 .HasForeignKey(g => g.HomeTeamId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(g => g.AwayTeam)
+            builder
+                .HasOne(g => g.AwayTeam)
                 .WithMany(t => t.AwayGames)
                 .HasForeignKey(g => g.AwayTeamId)
                 .OnDelete(DeleteBehavior.Restrict);

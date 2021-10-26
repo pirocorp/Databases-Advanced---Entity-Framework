@@ -8,9 +8,11 @@
     {
         public void Configure(EntityTypeBuilder<Color> builder)
         {
-            builder.HasKey(c => c.ColorId);
+            builder
+                .HasKey(c => c.ColorId);
 
-            builder.Property(c => c.Name)
+            builder
+                .Property(c => c.Name)
                 .IsRequired()
                 .HasMaxLength(40);
         }

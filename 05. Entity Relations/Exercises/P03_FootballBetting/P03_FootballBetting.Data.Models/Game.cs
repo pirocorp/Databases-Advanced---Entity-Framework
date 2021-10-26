@@ -16,9 +16,9 @@
 
         public DateTime DateTime { get; set; }
 
-        public byte HomeTeamGoals { get; set; }
+        public int HomeTeamGoals { get; set; }
 
-        public byte AwayTeamGoals { get; set; }
+        public int AwayTeamGoals { get; set; }
 
         public double HomeTeamBetRate { get; set; }
 

@@ -8,9 +8,11 @@
     {
         public void Configure(EntityTypeBuilder<Country> builder)
         {
-            builder.HasKey(c => c.CountryId);
+            builder
+                .HasKey(c => c.CountryId);
 
-            builder.Property(c => c.Name)
+            builder
+                .Property(c => c.Name)
                 .IsRequired()
                 .IsUnicode()
                 .HasMaxLength(80);

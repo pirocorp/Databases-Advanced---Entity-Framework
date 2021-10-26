@@ -1,8 +1,6 @@
-﻿using P03_FootballBetting.Data;
-
-namespace P03_FootballBetting
+﻿namespace P03_FootballBetting
 {
-    using Data.Models;
+    using P03_FootballBetting.Data;
 
     public class Startup
     {

@@ -9,15 +9,20 @@
     {
         public void Configure(EntityTypeBuilder<Bet> builder)
         {
-            builder.HasKey(b => b.BetId);
+            builder
+                .HasKey(b => b.BetId);
 
-            builder.HasOne(b => b.Game)
+            builder
+                .HasOne(b => b.Game)
                 .WithMany(g => g.Bets)
-                .HasForeignKey(b => b.GameId);
+                .HasForeignKey(b => b.GameId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(b => b.User)
+            builder
+                .HasOne(b => b.User)
                 .WithMany(u => u.Bets)
-                .HasForeignKey(b => b.UserId);
+                .HasForeignKey(b => b.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

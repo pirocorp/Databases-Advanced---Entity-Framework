@@ -9,16 +9,20 @@
     {
         public void Configure(EntityTypeBuilder<Town> builder)
         {
-            builder.HasKey(t => t.TownId);
+            builder
+                .HasKey(t => t.TownId);
 
-            builder.Property(t => t.Name)
+            builder
+                .Property(t => t.Name)
                 .IsUnicode()
                 .IsRequired()
                 .HasMaxLength(80);
 
-            builder.HasOne(t => t.Country)
+            builder
+                .HasOne(t => t.Country)
                 .WithMany(c => c.Towns)
-                .HasForeignKey(c => c.CountryId);
+                .HasForeignKey(c => c.CountryId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

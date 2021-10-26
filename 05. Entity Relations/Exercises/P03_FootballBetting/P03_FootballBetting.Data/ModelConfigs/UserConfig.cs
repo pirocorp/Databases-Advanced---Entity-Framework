@@ -10,19 +10,23 @@
         {
             builder.HasKey(u => u.UserId);
 
-            builder.Property(u => u.Name)
+            builder
+                .Property(u => u.Name)
                 .IsUnicode()
                 .HasMaxLength(100);
 
-            builder.Property(u => u.Username)
+            builder
+                .Property(u => u.Username)
                 .IsRequired()
                 .HasMaxLength(30);
 
-            builder.Property(u => u.Password)
+            builder
+                .Property(u => u.Password)
                 .IsRequired()
                 .HasMaxLength(30);
 
-            builder.Property(u => u.Email)
+            builder
+                .Property(u => u.Email)
                 .IsRequired()
                 .HasMaxLength(20);
         }

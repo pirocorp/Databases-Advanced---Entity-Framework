@@ -8,15 +8,20 @@
     {
         public void Configure(EntityTypeBuilder<PlayerStatistic> builder)
         {
-            builder.HasKey(ps => new {ps.PlayerId, ps.GameId});
+            builder
+                .HasKey(ps => new {ps.PlayerId, ps.GameId});
 
-            builder.HasOne(ps => ps.Game)
+            builder
+                .HasOne(ps => ps.Game)
                 .WithMany(g => g.PlayerStatistics)
-                .HasForeignKey(ps => ps.GameId);
+                .HasForeignKey(ps => ps.GameId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(ps => ps.Player)
+            builder
+                .HasOne(ps => ps.Player)
                 .WithMany(p => p.PlayerStatistics)
-                .HasForeignKey(ps => ps.PlayerId);
+                .HasForeignKey(ps => ps.PlayerId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
